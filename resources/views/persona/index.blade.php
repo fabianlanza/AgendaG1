@@ -31,12 +31,19 @@
                 <th>{{$persona->id}}</th>    
                 <th>{{$persona->CodPersona}}</th>  
                 <th>{{$persona->Nombre}}</th>  
-                <th>{{$persona->Apellido}}</th>  
+                <th>{{$persona->Apellido}}</th> 
+                 
                 <th>
                     <a href="/persona/{{$persona->id}}/edit" class="btn btn-outline-warning">Editar</a>
                     <a href="/telefono/{{$persona->id}}" class="btn btn-outline-success">Telefono</a>
                     <a href="/correo" class="btn btn-outline-info">Correo</a>
-                    <button class="btn btn-outline-danger">Eliminar</button>
+                    <th>
+                        <form action="/persona/{{$persona->id}}" method="POST">
+                        @csrf
+                        @method('Delete')
+                        <button type="submit" class="btn btn-outline-danger">Eliminar</button> 
+                        </form>
+                    </th>
                 </th>
             </tr>
         @endforeach

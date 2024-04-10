@@ -87,5 +87,9 @@ class PersonaController extends Controller
     public function destroy(string $id)
     {
         //
+        $eliminarpersona=Persona::find($id);
+        $eliminarpersona->delete();
+
+        return redirect('persona');
     }
 }
