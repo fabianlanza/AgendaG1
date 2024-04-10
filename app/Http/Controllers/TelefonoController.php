@@ -33,6 +33,16 @@ class TelefonoController extends Controller
     public function store(Request $request)
     {
         //
+
+        $telefono = new Telefono();
+
+        $telefono -> CodTelefono = $request -> get('CodTelefono');
+        $telefono -> Telefono = $request -> get('Telefono');
+        $telefono -> CodPersona = $request -> get('CodPersona');
+
+        $telefono -> save();
+
+        return redirect('/telefono');
     }
 
     /**
@@ -50,6 +60,8 @@ class TelefonoController extends Controller
     public function edit(string $id)
     {
         //
+        $telefonoEdit = Telefono::find($id);
+        return view('telefono.edit')->with('telefonoEdit', $telefonoEdit);
     }
 
     /**
@@ -58,6 +70,15 @@ class TelefonoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+
+        $telefonoEdit = Telefono::find($id);
+
+        $telefonoEdit -> CodTelefono = $request -> get('CodTelefono');
+        $telefonoEdit -> Telefono = $request -> get('Telefono');
+        $telefonoEdit -> CodPersona = $request -> get('CodPersona');
+
+        $telefonoEdit ->save();
+        return redirect('/telefono');
     }
 
     /**
