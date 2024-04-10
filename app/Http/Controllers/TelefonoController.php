@@ -51,6 +51,9 @@ class TelefonoController extends Controller
     public function show(string $id)
     {
         //
+        $telefonos = Telefono::All();
+        $persona = Persona::find($id);
+        return view('telefono.index2')->with('persona', $persona)->with('telefonos', $telefonos);
         
     }
 

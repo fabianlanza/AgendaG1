@@ -34,7 +34,7 @@
                 <th>{{$persona->Apellido}}</th>  
                 <th>
                     <a href="/persona/{{$persona->id}}/edit" class="btn btn-outline-warning">Editar</a>
-                    <a href="/telefono" class="btn btn-outline-success">Telefono</a>
+                    <a href="/telefono/{{$persona->id}}" class="btn btn-outline-success">Telefono</a>
                     <a href="/correo" class="btn btn-outline-info">Correo</a>
                     <button class="btn btn-outline-danger">Eliminar</button>
                 </th>
