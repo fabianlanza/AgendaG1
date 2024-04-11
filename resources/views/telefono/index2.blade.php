@@ -30,6 +30,7 @@
 
         <tbody>
         @foreach($telefonos as $telefono)
+        @if($telefono->CodPersona == $persona->CodPersona)
             <tr>
                 <th>{{$telefono->id}}</th>    
                 <th>{{$telefono->CodTelefono}}</th>  
@@ -40,6 +41,7 @@
                     <button class="btn btn-outline-danger">Eliminar</button>
                 </th>
             </tr>
+            @endif
         @endforeach
     </tbody>
 </table>
