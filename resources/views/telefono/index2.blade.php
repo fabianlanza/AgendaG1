@@ -37,8 +37,12 @@
                 <th>{{$telefono->Telefono}}</th>  
                 <th>{{$telefono->CodPersona}}</th>  
                 <th>
-                    <a href="/telefono/{{$telefono->id}}/edit" class="btn btn-outline-warning">Editar</a>
-                    <button class="btn btn-outline-danger">Eliminar</button>
+                    <form action="/telefono/{{$persona->id}}" method="POST">
+                        @csrf
+                        @method('Delete')
+                        <a href="/telefono/{{$telefono->id}}/edit" class="btn btn-outline-warning">Editar</a>
+                        <button class="btn btn-outline-danger">Eliminar</button>
+                    </form>
                 </th>
             </tr>
             @endif

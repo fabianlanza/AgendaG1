@@ -8,9 +8,9 @@
 <body>
 @extends('layouts.principal')
 @section('hijos')   
-    <h1>Modulo de Correo</h1>
+    <h1>Modulo de Correo de persona: {{$persona}}</h1>
 
-    <a href="correo/create" class="btn btn-primary">Agregar Correo</a>
+    <!-- <a href="correo/create" class="btn btn-primary">Agregar Correo</a> -->
 
     <table class="table">
         
@@ -27,6 +27,7 @@
 
         <tbody>
         @foreach($correos as $correo)
+        @if($correo->CodPersona == $persona)
             <tr>
                 <th>{{$correo->id}}</th>    
                 <th>{{$correo->CodCorreo}}</th>  
@@ -37,6 +38,7 @@
                     <button class="btn btn-outline-danger">Eliminar</button>
                 </th>
             </tr>
+        @endif
         @endforeach
     </tbody>
 </table>

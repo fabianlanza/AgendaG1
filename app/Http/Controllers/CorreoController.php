@@ -41,8 +41,11 @@ class CorreoController extends Controller
 
         $correo -> save();
 
-        return redirect('/correo');
+        //return redirect('/correo');
 
+
+        $correos = Correo::all();
+        return view('correo.index')->with('correos', $correos)->with('persona', $request->get('CodPersona'));
 
     }
 

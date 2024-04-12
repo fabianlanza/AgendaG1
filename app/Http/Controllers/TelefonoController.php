@@ -44,7 +44,7 @@ class TelefonoController extends Controller
         // return redirect('/telefono');
 
 
-        // prueba culera
+        // prueba Caca
         $telefonos = Telefono::all();
         return view('telefono.index')->with('telefonos', $telefonos)->with('persona', $request->get('CodPersona'));
     }
@@ -94,5 +94,10 @@ class TelefonoController extends Controller
     public function destroy(string $id)
     {
         //
+
+        $eliminartelefono=Telefono::find($id);
+        $eliminartelefono->delete();
+
+        return redirect('telefono');
     }
 }
