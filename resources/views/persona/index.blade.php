@@ -40,7 +40,7 @@
                         @method('Delete')
                         <a href="/persona/{{$persona->id}}/edit" class="btn btn-outline-warning">Editar</a>
                         <a href="/telefono/{{$persona->id}}" class="btn btn-outline-success">Telefono</a>
-                         <a href="/correo" class="btn btn-outline-info">Correo</a>
+                         <a href="/correo/{{$persona->id}}" class="btn btn-outline-info">Correo</a>
 
                         <button type="submit" class="btn btn-outline-danger">Eliminar</button> 
                     </form>
