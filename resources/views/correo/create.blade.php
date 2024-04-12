@@ -29,7 +29,7 @@
 
                     <div class="mb-3">
                         <label for="">Codigo Persona</label>
-                        <input type="text" name="CodPersona" class="form-control">
+                        <input type="text" name="CodPersona" class="form-control" value="{{$id}}">
                     </div>
 
                     <button type="submit">Guardar</button>

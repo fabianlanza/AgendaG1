@@ -13,7 +13,7 @@
 @section('hijos')   
     <h1>Modulo de Telefono</h1>
     <h2 class="text-center">Telefono de {{$persona->Nombre}}, {{$persona->CodPersona}}</h2>
-    <a href="/telefono/create" class="btn btn-primary">Agregar Telefono</a>
+    <a href="/telefono/create/{{$persona->CodPersona}}" class="btn btn-primary">Agregar Telefono</a>
 
     <table class="table">
         

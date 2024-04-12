@@ -21,10 +21,10 @@ class TelefonoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
         //
-        return view('telefono.create');
+        return view('telefono.create')->with('id', $id);
     }
 
     /**
@@ -41,8 +41,12 @@ class TelefonoController extends Controller
         $telefono -> CodPersona = $request -> get('CodPersona');
 
         $telefono -> save();
+        // return redirect('/telefono');
 
-        return redirect('/telefono');
+
+        // prueba culera
+        $telefonos = Telefono::all();
+        return view('telefono.index')->with('telefonos', $telefonos)->with('persona', $request->get('CodPersona'));
     }
 
     /**

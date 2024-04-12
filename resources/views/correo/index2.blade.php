@@ -13,7 +13,7 @@
 @section('hijos')   
     <h1>Modulo de Correo</h1>
     <h2 class="text-center">Correo de {{$persona->Nombre}}, {{$persona->CodPersona}}</h2>
-    <a href="/correo/create" class="btn btn-primary">Agregar Correo</a>
+    <a href="/correo/create/{{$persona->CodPersona}}" class="btn btn-primary">Agregar Correo</a>
 
     <table class="table">
         

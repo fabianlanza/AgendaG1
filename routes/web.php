@@ -34,6 +34,12 @@ Route::resource('/telefono', 'App\Http\Controllers\TelefonoController');
 Route::resource('/correo', 'App\Http\Controllers\CorreoController');
 
 
+
+Route::get('/telefono/create/{id}', [TelefonoController::class, 'create']);
+
+Route::get('/correo/create/{id}', [CorreoController::class, 'create']);
+
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

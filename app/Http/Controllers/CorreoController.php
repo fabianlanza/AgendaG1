@@ -21,10 +21,10 @@ class CorreoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
         //
-        return view('correo.create');
+        return view('correo.create')->with('id', $id);
     }
 
     /**
