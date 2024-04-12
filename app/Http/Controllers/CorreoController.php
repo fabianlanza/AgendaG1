@@ -33,6 +33,17 @@ class CorreoController extends Controller
     public function store(Request $request)
     {
         //
+        $correo = new Correo();
+
+        $correo -> CodCorreo = $request -> get('CodCorreo');
+        $correo -> Correo = $request -> get('Correo');
+        $correo -> CodPersona = $request -> get('CodPersona');
+
+        $correo -> save();
+
+        return redirect('/correo');
+
+
     }
 
     /**
@@ -41,6 +52,9 @@ class CorreoController extends Controller
     public function show(string $id)
     {
         //
+        $correos = Correo::All();
+        $persona = Persona::find($id);
+        return view('correo.index2')->with('persona', $persona)->with('correos', $correos);
     }
 
     /**
@@ -49,6 +63,8 @@ class CorreoController extends Controller
     public function edit(string $id)
     {
         //
+        $correoEdit = Correo::find($id);
+        return view('correo.edit')->with('correoEdit', $correoEdit);
     }
 
     /**
@@ -57,6 +73,16 @@ class CorreoController extends Controller
     public function update(Request $request, string $id)
     {
         //
+
+        $correoEdit = Correo::find($id);
+
+        $correoEdit -> CodCorreo = $request -> get('CodCorreo');
+        $correoEdit -> Correo = $request -> get('Correo');
+        $correoEdit -> CodPersona = $request -> get('CodPersona');
+
+        $correoEdit ->save();
+        return redirect('/correo');
+
     }
 
     /**
